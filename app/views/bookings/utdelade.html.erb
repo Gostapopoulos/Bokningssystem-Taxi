@@ -1,0 +1,78 @@
+<h1>Utdelade körningar</h1>
+
+<div id="notice"><%= notice %></div>
+
+<%= link_to 'Bokningar', bookings_path, :target => "_blank" %>
+
+<div id="list_area"> <!-- style="overflow: auto; max-height: 400px;"-->
+  <table id="bookings_list">
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th colspan="2">Utrop/Hämttid</th>
+        <th>Från</th>
+        <th>Till</th>
+        <th>Resenär(er)</th>
+        <th>Anmärkning</th>
+        <th>Status</th>
+        <th>Bil</th>
+        <th style="border-right: 0px;"></th>
+      </tr>
+    </thead>
+    <tbody style="height: 400px; overflow: auto; display: scroll; width: 100%">
+
+      <% @bookings.each do |booking| %>
+        <% utrop=booking.utrop%>
+        <% hamttid=booking.hamttid %>
+        <% status=booking.status %>
+        <% status_time = booking.updated_at.to_s[11..15] %>
+        <tr>
+          <td rowspan="2" class="datum"><%= utrop.to_s[0..10] %></td>
+          <td rowspan="2" class="utrop"><%= utrop.to_s[11..15] %></td>
+          <td rowspan="2" class="hamttid"><%= hamttid.to_s[11..15] %></td>
+          <td rowspan="2" class="fran"><%= booking.fran %></td>
+          <td rowspan="2" class="till"><%= booking.till %></td>
+          <td class="namn"><%= booking.namn %></td>
+          <td class="anm" rowspan="2"><%= booking.anm %></td>
+          <!-- Status-kolumnen -->
+          <td rowspan="2" class="<%= status %>">
+            <% if(status == "klar" or status == "bom") %><%= status_time %>
+            <% elsif status == "bokad" %>!
+            <% elsif status == "avb" %><%= status.upcase %>
+            <% end %>
+          </td>
+          <!-- /Status-kolumnen -->
+          <!-- Bil-kolumnen -->
+          <td rowspan="2" class="bil" style="background-image: url(/images/<%= booking.status %>.png); background-position: center; background-repeat: no-repeat;">
+              <%= booking.bil %>
+          </td>
+          <!-- /Bil-kolumnen -->
+          <!-- Meny-knapp -->
+          <td rowspan="2" class="right_edge">
+            <ul class="sddm">
+              <li>
+                <%= link_to 'MENY', "#", :onmouseover => "mopen('m#{booking.id}')", :onmouseout => "mclosetime()" %>
+                <div id="m<%= booking.id %>" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                  <%= link_to 'Redigera', edit_booking_path(booking), :target => '_blank' %>
+                  <%= link_to 'Duplicera', duplicate_booking_path(booking) %>
+                  <%= link_to 'Boka retur', retur_booking_path(booking), :target => '_blank' %>
+                  <span class="separator">&nbsp;</span>
+                  <%= link_to 'Återuppta', reclaim_booking_path(booking)%>
+                  <%= link_to 'Bom', bom_booking_path(booking) %>
+                  <%= link_to 'Avboka', avb_booking_path(booking) %>
+                  <%= link_to 'Ändra bil', andrabil_booking_path(booking), :target => '_blank' %>
+                </div>
+              </li>
+            </ul>
+          </td>
+          <!-- /Meny-knapp -->
+        </tr>
+        <tr>
+          <td class="namn" style="border-top: 0px"><strong>Tlf: </strong><%= booking.telefonnr %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% #= link_to 'New Booking', new_booking_path %>

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Mottagare:</b>
+  <%= @booking.mottagare %>
+</p>
+
+<p>
+  <b>Utrop:</b>
+  <%= @booking.utrop.to_s[0..-6] %>
+</p>
+
+<p>
+  <b>Hämttid:</b>
+  <%= @booking.hamttid.to_s[0..-6] %>
+</p>
+
+<p>
+  <b>Från:</b>
+  <%= @booking.fran %>
+</p>
+
+<p>
+  <b>Till:</b>
+  <%= @booking.till %>
+</p>
+
+<p>
+  <b>Namn:</b>
+  <%= @booking.namn %>
+</p>
+
+<p>
+  <b>Anm:</b>
+  <%= @booking.anm %>
+</p>
+
+<%= form_for(@booking) do |f| %>
+  <div class="field">
+    <%= f.label :bil %>
+    <%= f.text_field :bil, :size => 1, :class => "dela_ut_bil_input" %>
+  </div>
+<div class="field">
+  <%= f.hidden_field :status, :value => 'klar' %>
+</div>
+  <div class="actions">
+    <%= f.submit "Dela ut körning", :onclick => "window.close()"%>
+  </div>
+<% end %>
+
+  <%= link_to 'Redigera den här bokningen', edit_booking_path(@booking) %>

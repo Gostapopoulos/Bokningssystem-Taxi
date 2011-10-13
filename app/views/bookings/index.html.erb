@@ -1,0 +1,29 @@
+<h1>Bokade körningar</h1>
+<%= Time.current %>
+<div id="countbox1"></div>
+
+<div id="notice"><%= notice %></div>
+
+<ul class="visning_meny">
+  <li class="visning_li"><strong>Visa:</strong></li>
+  <li class="visning_li"><div class="visning_link_box"><%= link_to 'Ett dygn', one_day_path, :remote => 'true' %></div></li>
+  <li class="visning_li"><div class="visning_link_box"><%= link_to 'En vecka', one_week_path, :remote => 'true' %></div></li>
+  <li class="visning_li"><div class="visning_link_box"><%= link_to 'En månad', one_month_path, :remote => 'true' %></div></li>
+  <li class="visning_li"><div class="visning_link_box"><%= link_to 'Alla', :root, :remote => 'true' %></div></li>
+  <li class="visning_li" style="float: right"><div class="visning_link_box"><%= link_to 'Utdelade bokningar', utdelade_path, :target => "_blank" %></div></li>
+</ul>
+
+<div id="list_area"> <!-- style="overflow: auto; max-height: 400px;"-->
+
+  <%= render 'thelist' %>
+
+</div>
+
+<h1>Ny bokning</h1>
+
+<div id="new_booking_area">
+
+  <%= render 'new_form' %>
+
+</div>
+<br />

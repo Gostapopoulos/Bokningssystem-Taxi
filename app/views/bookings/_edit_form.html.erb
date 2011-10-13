@@ -1,0 +1,62 @@
+<div style="width: 350px;">
+<%= form_for(@edit_booking) do |f| %>
+  <% if @edit_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@edit_booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% @edit_booking.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :hämttid %><br />
+    <%= f.datetime_select :hamttid %>
+  </div>
+  <div class="field">
+    <% # %>
+    <%= f.label "Utrop" %><br />
+    Timmar: <%= f.select :utroptimmar, options_for_select([0, 1, 2, 3, 4, 5], @edit_booking.utroptimmar) %>
+    Minuter: <%= f.select :utropminuter, options_for_select([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55], @edit_booking.utropminuter) %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :från %><br />
+    <%= f.text_field :fran %>
+  </div>
+  <div class="field">
+    <%= f.label :till %><br />
+    <%= f.text_field :till %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :namn %><br />
+    <%= f.text_field :namn %>
+  </div>
+  <div class="field">
+    <%= f.label :telefonnr %><br />
+    <%= f.text_field :telefonnr %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :anm %><br />
+    <%= f.text_field :anm %>
+  </div>
+  <div class="field">
+    <%= f.label :mottagare %><br />
+    <%= f.text_field :mottagare %>
+  </div>
+  <br />
+  <div class="actions">
+        <%= f.submit "Uppdatera bokning", :onclick => "window.close()"%>
+  </div>
+<% end %>
+</div>

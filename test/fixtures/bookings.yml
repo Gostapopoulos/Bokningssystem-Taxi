@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mottagare: MyString
+  utrop: 2011-09-05 12:09:15
+  hamttid: 2011-09-05 12:09:15
+  fram: MyString
+  till: MyString
+  namn: MyString
+  anm: MyString
+  status: MyString
+  bil: 1
+  telefonnr: MyString
+  utroptimmar: 1
+  utropminuter: 1
+
+two:
+  mottagare: MyString
+  utrop: 2011-09-05 12:09:15
+  hamttid: 2011-09-05 12:09:15
+  fram: MyString
+  till: MyString
+  namn: MyString
+  anm: MyString
+  status: MyString
+  bil: 1
+  telefonnr: MyString
+  utroptimmar: 1
+  utropminuter: 1

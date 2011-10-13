@@ -1,0 +1,65 @@
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mottagare %><br />
+    <%= f.text_field :mottagare %>
+  </div>
+  <div class="field">
+    <%= f.label :utrop %><br />
+    <%= f.datetime_select :utrop %>
+  </div>
+  <div class="field">
+    <%= f.label :hamttid %><br />
+    <%= f.datetime_select :hamttid %>
+  </div>
+  <div class="field">
+    <%= f.label :fram %><br />
+    <%= f.text_field :fram %>
+  </div>
+  <div class="field">
+    <%= f.label :till %><br />
+    <%= f.text_field :till %>
+  </div>
+  <div class="field">
+    <%= f.label :namn %><br />
+    <%= f.text_field :namn %>
+  </div>
+  <div class="field">
+    <%= f.label :anm %><br />
+    <%= f.text_field :anm %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :bil %><br />
+    <%= f.number_field :bil %>
+  </div>
+  <div class="field">
+    <%= f.label :telefonnr %><br />
+    <%= f.text_field :telefonnr %>
+  </div>
+  <div class="field">
+    <%= f.label :utroptimmar %><br />
+    <%= f.number_field :utroptimmar %>
+  </div>
+  <div class="field">
+    <%= f.label :utropminuter %><br />
+    <%= f.number_field :utropminuter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

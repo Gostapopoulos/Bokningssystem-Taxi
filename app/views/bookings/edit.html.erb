@@ -1,0 +1,12 @@
+<h1>Redigera bokning</h1>
+<div style="float: right; position: absolute; left: 340px; border-left: 1px solid #777; padding-left: 20px">
+  <p>Beställningsmottagare: <br />
+    <strong><%= @edit_booking.mottagare %></strong></p>
+  <p>Beställningen gjordes: <br />
+    <strong><%= @edit_booking.created_at.to_s[0..-8] %></strong></p>
+  <p>Senaste ändringen gjordes: <br />
+    <strong><%= @edit_booking.updated_at.to_s[0..-8] %></strong></p>
+</div>
+
+<%= render 'edit_form' %>
+

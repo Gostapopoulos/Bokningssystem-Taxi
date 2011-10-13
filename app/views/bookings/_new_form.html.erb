@@ -1,0 +1,63 @@
+<%= form_for(@edit_booking, :remote => 'true') do |f| %>
+  <% if @edit_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@edit_booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% @edit_booking.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table class="ny_bokning_formular"><tr valign="top">
+      <td>
+        <div class="field">
+          <%= f.label :hämttid %><br />
+          <%= f.datetime_select :hamttid %>
+        </div>
+        <div class="field">
+          <%= f.label "Utropstid" %><br />
+          Timmar: <%= f.select :utroptimmar, options_for_select([0, 1, 2, 3, 4, 5]) %>
+          Minuter: <%= f.select :utropminuter, options_for_select([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]) %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :från %><br />
+          <%= f.text_field :fran %>
+        </div>
+        <div class="field">
+          <%= f.label :till %><br />
+          <%= f.text_field :till %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :namn %><br />
+          <%= f.text_field :namn %>
+        </div>
+        <div class="field">
+          <%= f.label :telefonnr %><br />
+          <%= f.text_field :telefonnr %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :anm %><br />
+          <%= f.text_field :anm %>
+        </div>
+        <div class="field">
+          <%= f.label :mottagare %><br />
+          <%= f.text_field :mottagare %>
+        </div>
+      </td>
+    </tr>
+  </table>
+<div class="field">
+  <%= f.hidden_field :status, :value => 'bokad' %>
+</div>
+  <div class="actions">
+    <%= f.submit "Boka" %>
+  </div>
+<% end %>

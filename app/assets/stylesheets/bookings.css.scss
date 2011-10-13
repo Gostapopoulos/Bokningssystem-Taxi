@@ -1,0 +1,451 @@
+body { background-color: #222; color: #fff; }
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+a { color: #fff; text-decoration: none;}
+a:visited { color: #fff; }
+a:hover { color: #000; background-color:#fff; }
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+
+#notice {
+    color: green;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+}
+
+
+/* Listan över inbokade körningar */
+
+div #list_area{
+    width: 100%;
+/*    height: 400px;
+    max-height: 400px;
+    overflow: auto; */
+}
+
+#bookings_list {
+    width: 100%;
+    padding: 0px;
+    border-spacing: 0px;
+    border: 2px solid #ccc;
+}
+
+#bookings_list a { color: #fff; }
+#bookings_list a:hover { color: #000; background-color:#fff; }
+
+/*
+#bookings_list tr.odd{
+    background-color: #333;
+}
+
+#bookings_list tr.even{
+    background-color: #444;
+}
+
+#bookings_list thead .tr{
+    position: relative;
+    display: block;
+}
+#bookings_list tbody{
+    display: block;
+    max-height: 400px;
+    overflow: auto;
+}
+
+#bookings_list th{
+    border-right: 1px solid #777;
+}
+*/
+#bookings_list td {
+    border-top: 1px solid #777;
+    /*border-right: 1px solid #777;*/
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 6px;
+}
+
+#bookings_list td.datum {
+    width: 100px;
+    background-color: #444;
+}
+
+#bookings_list td.y_datum {
+    width: 100px;
+    background-color: #CCC;
+    background-image: url("bg-y.png");
+    color: #000;
+}
+
+#bookings_list td.r_datum {
+    width: 100px;
+    background-color: #444;
+    background-image: url("bg-r.png");
+}
+
+#bookings_list td.utrop {
+    width: 50px;
+    background-color: #333;
+    color: #7bf;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.y_utrop {
+    width: 50px;
+    color: #48c;
+    background-color: #BBB;
+    background-image: url("bg-y.png");
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.r_utrop {
+    width: 50px;
+    background-color: #222;
+    background-image: url("bg-r.png");
+    color: #7bf;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.hamttid {
+    width: 50px;
+    background-color: #444;
+    color: #7fb;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.y_hamttid {
+    width: 50px;
+    background-color: #CCC;
+    background-image: url("bg-y.png");
+    color: #4c8;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.r_hamttid {
+    width: 50px;
+    background-color: #444;
+    background-image: url("bg-r.png");
+    color: #7fb;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bookings_list td.fran {
+    background-color: #333;
+    text-align: left;
+    width: 200px;
+    color: #ff0;
+}
+
+#bookings_list td.y_fran {
+    background-color: #BBB;
+    background-image: url("bg-y.png");
+    text-align: left;
+    width: 200px;
+    color: #000;
+}
+
+#bookings_list td.r_fran {
+    background-color: #222;
+    background-image: url("bg-r.png");
+    text-align: left;
+    width: 200px;
+    color: #ff0;
+}
+
+#bookings_list td.till {
+    text-align: left;
+    width: 200px;
+    background-color: #444;
+}
+
+#bookings_list td.y_till {
+    text-align: left;
+    width: 200px;
+    color: #000;
+    background-color: #CCC;
+    background-image: url("bg-y.png");
+}
+
+#bookings_list td.r_till {
+    text-align: left;
+    width: 200px;
+    background-color: #444;
+    background-image: url("bg-r.png");
+}
+
+#bookings_list td.namn {
+    background-color: #333;
+    text-align: left;
+    width: 200px;
+}
+
+#bookings_list td.y_namn {
+    color: #000;
+    background-color: #BBB;
+    background-image: url("bg-y.png");
+    text-align: left;
+    width: 200px;
+}
+
+#bookings_list td.r_namn {
+    background-color: #222;
+    background-image: url("bg-r.png");
+    text-align: left;
+    width: 200px;
+}
+
+#bookings_list td.anm{
+    background-color: #444;
+    text-align: left;
+}
+
+#bookings_list td.y_anm{
+    color: #000;
+    background-color: #CCC;
+    background-image: url("bg-y.png");
+    text-align: left;
+}
+
+#bookings_list td.r_anm{
+    background-color: #444;
+    background-image: url("bg-r.png");
+    text-align: left;
+}
+
+#bookings_list td.bokad {
+    width: 50px;
+    background-color: #333;
+}
+
+#bookings_list td.y_bokad {
+    width: 50px;
+    color: #000;
+    background-color: #BBB;
+    background-image: url("bg-y.png");
+}
+
+#bookings_list td.r_bokad {
+    width: 50px;
+    background-color: #222;
+    background-image: url("bg-r.png");
+}
+
+#bookings_list td.klar {
+    width: 50px;
+    background-color: #333;
+    color: #0F0;
+}
+
+#bookings_list td.avb {
+    width: 50px;
+    background-color: #CCC;
+    color: #000;
+    font-weight: bold;
+}
+
+#bookings_list td.bom {
+    width: 50px;
+    background-color: #333;
+    color: #F00;
+}
+
+#bookings_list td.bil {
+    width: 40px;
+    background-color: #444;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bookings_list td.y_bil {
+    width: 40px;
+    color: #000;
+    background-color: #CCC;
+    background-image: url("bg-y.png");
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bookings_list td.r_bil {
+    width: 40px;
+    background-color: #444;
+    background-image: url("bg-r.png");
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bookings_list td.right_edge {
+    width: 40px;
+    background-color: #333;
+    border-right: 0px;
+}
+
+/* Formuläret för ny bokning */
+
+div #new_booking_area{
+}
+
+.ny_bokning_formular td{
+    padding-right: 20px;
+}
+
+/* Formulär för att dela ut körning */
+
+.dela_ut_bil_input{
+    font-family: Arial;
+    font-size: 20px;
+}
+
+/* Drop-Down-meny */
+
+.sddm {
+    margin: 0;
+    padding: 0;
+    z-index: 30
+}
+
+.sddm li {
+    margin: 0;
+    /* padding: 10px;*/
+    list-style: none;
+    /* float: left;*/
+    font: bold 11px arial
+}
+
+.sddm li a {
+    display: block;
+    margin: 0 1px 0 0;
+    /* padding: 4px 10px;*/
+    /* width: 60px;*/
+    /* background: #5970B2;*/
+    color: #FFF;
+    text-align: center;
+    text-decoration: none
+}
+
+.sddm li a:hover
+{	background: #49A3FF}
+
+.sddm div {
+    position: absolute;
+    right: 0px;
+    visibility: hidden;
+    margin: 0;
+    padding: 10px;
+    background: #333;
+    border: 1px solid #777;
+}
+
+.sddm div a {
+    position: relative;
+    display: block;
+    margin: 0;
+    /* padding: 5px 10px;*/
+    width: auto;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: none;
+    background: #333;
+    color: #FFF;
+    font-size: 12px;
+}
+
+.sddm div a:hover {
+    background: #444;
+    color: #FFF
+}
+
+/* övriga element */
+
+.sddm span .separator {
+    height: 1px;
+    width: 100%;
+    border: 0px;
+    background-color: #777;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.delaut_img {
+    border: 0;
+}
+
+#bookings_list a:hover.delaut_knapp {
+    color: #000;
+    background-color: transparent;
+}
+
+.visning_meny {
+    padding: 0;
+}
+
+.visning_li {
+    display: inline;
+}
+
+.visning_link_box {
+    display: inline;
+    background-color: #48f;
+    border: 1px solid;
+    border-left-color: #8cf;
+    border-top-color: #8cf;
+    border-right-color: #26a;
+    border-bottom-color: #26a;
+    padding: 3px;
+}

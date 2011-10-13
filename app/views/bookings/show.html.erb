@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Mottagare:</b>
+  <%= @booking.mottagare %>
+</p>
+
+<p>
+  <b>Utrop:</b>
+  <%= @booking.utrop %>
+</p>
+
+<p>
+  <b>Hamttid:</b>
+  <%= @booking.hamttid %>
+</p>
+
+<p>
+  <b>Fram:</b>
+  <%= @booking.fram %>
+</p>
+
+<p>
+  <b>Till:</b>
+  <%= @booking.till %>
+</p>
+
+<p>
+  <b>Namn:</b>
+  <%= @booking.namn %>
+</p>
+
+<p>
+  <b>Anm:</b>
+  <%= @booking.anm %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @booking.status %>
+</p>
+
+<p>
+  <b>Bil:</b>
+  <%= @booking.bil %>
+</p>
+
+<p>
+  <b>Telefonnr:</b>
+  <%= @booking.telefonnr %>
+</p>
+
+<p>
+  <b>Utroptimmar:</b>
+  <%= @booking.utroptimmar %>
+</p>
+
+<p>
+  <b>Utropminuter:</b>
+  <%= @booking.utropminuter %>
+</p>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
